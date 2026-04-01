@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamza Babar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:       #0e0f11;
+      --bg2:      #141618;
+      --bg3:      #1c1e22;
+      --ink:      #e8e6e1;
+      --ink2:     #8a8780;
+      --ink3:     #52504c;
+      --accent:   #7eb8a0;
+      --accent2:  #4a8f76;
+      --border:   #252729;
+      --tag-bg:   #1c1e22;
+      --tag-text: #8a8780;
+      --toggle-bg:#1c1e22;
+    }
+    [data-theme="light"] {
+      --bg:       #f0ede8;
+      --bg2:      #e8e4de;
+      --bg3:      #dedad3;
+      --ink:      #1a1816;
+      --ink2:     #5c5a56;
+      --ink3:     #9e9b96;
+      --accent:   #2a6b52;
+      --accent2:  #1e4f3c;
+      --border:   #d0ccc4;
+      --tag-bg:   #e2ddd7;
+      --tag-text: #5c5a56;
+      --toggle-bg:#dedad3;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    ::selection { background: var(--accent); color: var(--bg); }
+
+    /* nav */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      background: var(--bg);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    nav.scrolled { border-color: var(--border); }
+    .nav-left { display: flex; align-items: center; gap: 32px; }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      color: var(--ink3);
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* theme toggle */
+    .theme-toggle {
+      background: var(--toggle-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--ink3);
+      letter-spacing: 0.04em;
+      transition: color 0.2s, background 0.3s, border-color 0.3s;
+    }
+    .theme-toggle:hover { color: var(--ink); border-color: var(--accent); }
+
+    /* layout */
+    main { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+    section { padding: 88px 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    /* hero */
+    #hero {
+      padding-top: 160px;
+      padding-bottom: 88px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--ink3);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(52px, 9vw, 88px);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+    .hero-name em { font-style: italic; color: var(--accent); }
+    .hero-desc {
+      max-width: 460px;
+      color: var(--ink2);
+      font-size: 13px;
+      line-height: 1.9;
+      margin-bottom: 36px;
+    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 48px; }
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 11px;
+      padding: 4px 12px;
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+      border: 1px solid var(--border);
+    }
+    .hero-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .hero-links a {
+      color: var(--ink2);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .hero-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* section label */
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink3);
+      margin-bottom: 44px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* experience */
+    .exp-list { display: flex; flex-direction: column; gap: 44px; }
+    .exp-item { display: grid; grid-template-columns: 1fr 110px; gap: 16px; }
+    .exp-firm { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); margin-bottom: 4px; }
+    .exp-role { font-size: 11px; color: var(--accent); margin-bottom: 12px; letter-spacing: 0.05em; }
+    .exp-desc { color: var(--ink2); font-size: 12px; line-height: 1.9; }
+    .exp-date { font-size: 11px; color: var(--ink3); text-align: right; padding-top: 4px; letter-spacing: 0.04em; white-space: nowrap; }
+
+    /* projects */
+    .project-list { display: flex; flex-direction: column; }
+    .project-item {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .project-item:first-child { border-top: 1px solid var(--border); }
+    .project-num { font-size: 11px; color: var(--ink3); padding-top: 4px; letter-spacing: 0.06em; }
+    .project-name { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); margin-bottom: 8px; }
+    .project-desc { color: var(--ink2); font-size: 12px; line-height: 1.9; margin-bottom: 14px; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .project-tag {
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: rgba(126,184,160,0.08);
+      padding: 3px 10px;
+      border-radius: 3px;
+      border: 1px solid rgba(126,184,160,0.15);
+    }
+
+    /* skills */
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+    .skill-group-title { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink3); margin-bottom: 14px; }
+    .skill-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-pill {
+      font-size: 11px;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+      padding: 4px 10px;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+    }
+
+    /* about */
+    .about-body { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+    .about-block-title { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink3); margin-bottom: 12px; }
+    .about-text { color: var(--ink2); font-size: 12px; line-height: 1.9; }
+
+    /* contact */
+    .contact-line {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      color: var(--ink);
+      margin-bottom: 36px;
+      line-height: 1.15;
+    }
+    .contact-line em { font-style: italic; color: var(--accent); }
+    .contact-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .contact-links a {
+      color: var(--ink2);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .contact-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    footer span { font-size: 11px; color: var(--ink3); letter-spacing: 0.06em; }
+
+    /* reveal */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* responsive */
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      main { padding: 0 20px; }
+      #hero { padding-top: 110px; }
+      .exp-item { grid-template-columns: 1fr; }
+      .exp-date { text-align: left; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .about-body { grid-template-columns: 1fr; gap: 28px; }
+      footer { padding: 20px; flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="nav-left">
+      <a href="#hero" class="nav-logo">hb.</a>
+      <ul class="nav-links">
+        <li><a href="#experience">experience</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#skills">skills</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span id="toggleIcon">☀</span>
+      <span id="toggleLabel">light</span>
+    </button>
+  </nav>
+
+  <main>
+
+    <section id="hero">
+      <p class="hero-eyebrow">London, ON · Canadian Citizen</p>
+      <h1 class="hero-name">hi, I'm<br><em>Hamza.</em></h1>
+      <p class="hero-desc">
+        CS student at Western University building a career at the intersection of
+        cybersecurity and consulting. Currently interning at Deloitte.
+      </p>
+      <div class="hero-tags">
+        <span class="tag">cybersecurity & risk</span>
+        <span class="tag">GRC consulting</span>
+        <span class="tag">western · class of 2027</span>
+        <span class="tag">dubai → london, on</span>
+      </div>
+      <div class="hero-links">
+        <a href="mailto:hkbabar10@gmail.com">email</a>
+        <a href="https://linkedin.com/in/hamza-khan-babar" target="_blank">linkedin</a>
+        <a href="https://github.com/hkbabar10" target="_blank">github</a>
+        <a href="Hamza_Babar_Resume.pdf" target="_blank">résumé</a>
+      </div>
+    </section>
+
+    <section id="experience">
+      <p class="section-label">Experience</p>
+      <div class="exp-list">
+
+        <div class="exp-item reveal">
+          <div>
+            <p class="exp-firm">Deloitte</p>
+            <p class="exp-role">Cybersecurity & Risk Intern · Toronto, ON</p>
+            <p class="exp-desc">Incoming summer intern in Deloitte's Cyber & Strategic Risk practice.</p>
+          </div>
+          <p class="exp-date">Jul – Aug 2026</p>
+        </div>
+
+        <div class="exp-item reveal">
+          <div>
+            <p class="exp-firm">KPMG</p>
+            <p class="exp-role">Technology Risk & Advisory Intern · Dubai, UAE</p>
+            <p class="exp-desc">
+              Conducted cybersecurity risk assessments for public and private-sector clients against
+              NIST CSF and ISO 27001 frameworks. Developed GRC documentation assets including
+              risk-assessment templates and control testing workpapers. Contributed to a
+              cloud-readiness assessment mapping legacy application dependencies to future-state architectures.
+            </p>
+          </div>
+          <p class="exp-date">Jun – Jul 2025</p>
+        </div>
+
+        <div class="exp-item reveal">
+          <div>
+            <p class="exp-firm">iSolution</p>
+            <p class="exp-role">SOC Analyst · Dubai, UAE</p>
+            <p class="exp-desc">
+              Engineered Splunk SIEM dashboards and automated correlation rules to improve alert fidelity.
+              Supported incident response including log analysis and root-cause investigations across
+              hybrid environments. Designed a GCP Threat-Hunting Playbook integrated into
+              client-facing security operations documentation.
+            </p>
+          </div>
+          <p class="exp-date">May – Jun 2025</p>
+        </div>
+
+        <div class="exp-item reveal">
+          <div>
+            <p class="exp-firm">PwC</p>
+            <p class="exp-role">Technology & Data Advisory Intern · Dubai, UAE</p>
+            <p class="exp-desc">
+              Supported a large-scale digital transformation engagement for ADNOC, conducting
+              process mapping across upstream, downstream, and shared-services operations.
+              Evaluated enterprise system controls across SAP and cloud workloads, contributing
+              to ADNOC's IT governance roadmap.
+            </p>
+          </div>
+          <p class="exp-date">May – Jun 2024</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="projects">
+      <p class="section-label">Projects</p>
+      <div class="project-list">
+
+        <div class="project-item reveal">
+          <span class="project-num">01</span>
+          <div>
+            <p class="project-name">Simulator Game</p>
+            <p class="project-desc">
+              Built in a 4-person agile team for a Software Engineering course. Handled
+              requirements gathering, sprint planning, and stakeholder coordination —
+              balancing technical constraints with user experience goals.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Agile</span>
+              <span class="project-tag">Software Engineering</span>
+              <span class="project-tag">Java</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item reveal">
+          <span class="project-num">02</span>
+          <div>
+            <p class="project-name">Reminder App</p>
+            <p class="project-desc">
+              Personal project — a task-tracking and reminder application with data persistence,
+              notifications, and user workflows. Focused on system design and reliability.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">System Design</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills">
+      <p class="section-label">Skills</p>
+      <div class="skills-grid">
+        <div class="reveal">
+          <p class="skill-group-title">GRC & Risk</p>
+          <div class="skill-pills">
+            <span class="skill-pill">NIST CSF</span>
+            <span class="skill-pill">ISO 27001</span>
+            <span class="skill-pill">SOC 2</span>
+            <span class="skill-pill">PIPEDA</span>
+            <span class="skill-pill">Risk Registers</span>
+            <span class="skill-pill">Control Testing</span>
+          </div>
+        </div>
+        <div class="reveal">
+          <p class="skill-group-title">Security & Analytics</p>
+          <div class="skill-pills">
+            <span class="skill-pill">Splunk SIEM</span>
+            <span class="skill-pill">GCP Security</span>
+            <span class="skill-pill">Log Analysis</span>
+            <span class="skill-pill">Process Mapping</span>
+            <span class="skill-pill">KPI Dashboards</span>
+          </div>
+        </div>
+        <div class="reveal">
+          <p class="skill-group-title">Technical</p>
+          <div class="skill-pills">
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">Java</span>
+            <span class="skill-pill">SQL</span>
+            <span class="skill-pill">AWS</span>
+            <span class="skill-pill">Linux</span>
+            <span class="skill-pill">Git</span>
+          </div>
+        </div>
+        <div class="reveal">
+          <p class="skill-group-title">Business Tools</p>
+          <div class="skill-pills">
+            <span class="skill-pill">Excel (Advanced)</span>
+            <span class="skill-pill">PowerPoint</span>
+            <span class="skill-pill">SAP</span>
+          </div>
+        </div>
+        <div class="reveal">
+          <p class="skill-group-title">Languages</p>
+          <div class="skill-pills">
+            <span class="skill-pill">English</span>
+            <span class="skill-pill">Urdu</span>
+            <span class="skill-pill">Spanish</span>
+          </div>
+        </div>
+        <div class="reveal">
+          <p class="skill-group-title">Certifications</p>
+          <div class="skill-pills">
+            <span class="skill-pill">Google Cybersecurity</span>
+            <span class="skill-pill">IBM & ISC2 Cyber</span>
+            <span class="skill-pill">CompTIA Sec+ (in progress)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <p class="section-label">About</p>
+      <div class="about-body">
+        <div class="reveal">
+          <p class="about-block-title">Background</p>
+          <p class="about-text">
+            Third-year Computer Science student at Western University, originally from
+            Pakistan and raised across the Middle East. Pursuing a career in cybersecurity
+            and risk consulting — working at the intersection of technology and business.
+          </p>
+        </div>
+        <div class="reveal">
+          <p class="about-block-title">Currently</p>
+          <p class="about-text">
+            Completing certifications in Google Cybersecurity and IBM & ISC2 Cybersecurity,
+            and preparing for a summer internship at Deloitte's cyber risk practice in Toronto.
+          </p>
+        </div>
+        <div class="reveal">
+          <p class="about-block-title">Education</p>
+          <p class="about-text">
+            Western University<br>
+            B.Sc. Computer Science (Honours)<br>
+            Expected 2027
+          </p>
+        </div>
+        <div class="reveal">
+          <p class="about-block-title">Interests</p>
+          <p class="about-text">
+            Cybersecurity frameworks, digital governance, risk management, and the human
+            side of security — how organisations build trust in uncertain environments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <p class="contact-line">Let's <em>connect.</em></p>
+      <div class="contact-links">
+        <a href="mailto:hkbabar10@gmail.com">hkbabar10@gmail.com</a>
+        <a href="https://linkedin.com/in/hamza-khan-babar" target="_blank">linkedin</a>
+        <a href="https://github.com/hkbabar10" target="_blank">github</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>hamza babar · cs · western · 2027</span>
+    <span>london, on</span>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    const html = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const icon = document.getElementById('toggleIcon');
+    const label = document.getElementById('toggleLabel');
+
+    btn.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      icon.textContent = isDark ? '☽' : '☀';
+      label.textContent = isDark ? 'dark' : 'light';
+    });
+  </script>
+
+</body>
+</html>
