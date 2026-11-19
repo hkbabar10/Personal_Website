@@ -1,92 +1,679 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0d1117">
-  <meta name="description" content="Hamza Babar — Computer Science student at Western University, with experience in cybersecurity operations, technology consulting, and software development.">
-  <meta property="og:title" content="Hamza Babar | Cybersecurity & Technology">
-  <meta property="og:description" content="Cybersecurity, technology consulting and software projects. Explore experience, technical skills and projects.">
-  <title>Hamza Babar | Cybersecurity & Technology</title>
+  <title>Hamza Babar | Cybersecurity, consulting and software</title>
+  <meta name="description" content="Hamza Babar is a Computer Science student at Western University (class of 2027) with SOC experience at Deloitte and iSolution, consulting experience at PwC, and his own software projects.">
+  <meta property="og:title" content="Hamza Babar | Cybersecurity, consulting and software">
+  <meta property="og:description" content="SOC analyst intern at Deloitte Middle East. CS at Western University, graduating 2027. Building Tab and StudyCafe.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#EEF1F6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1525" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314213D'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-family='Arial' font-weight='700' font-size='30' fill='%23EEF1F6'%3Ehb%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    // Set theme before paint to avoid a flash
+    (function(){var t=null;try{t=localStorage.getItem('hb-theme')}catch(e){}
+      if(!t){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+      document.documentElement.setAttribute('data-theme',t)})();
+  </script>
   <style>
-    :root{color-scheme:dark;--bg:#0d1117;--surface:#141b23;--surface-2:#18212a;--text:#edf2f2;--muted:#a5b1bb;--soft:#7c8a96;--border:#293440;--accent:#82d5bc;--accent-bg:rgba(130,213,188,.09);--shadow:rgba(0,0,0,.22)}
-    [data-theme="light"]{color-scheme:light;--bg:#f7f8f6;--surface:#fff;--surface-2:#edf3f0;--text:#17242a;--muted:#4d606a;--soft:#627780;--border:#dce5e3;--accent:#176e5c;--accent-bg:rgba(23,110,92,.07);--shadow:rgba(37,57,50,.07)}
-    *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:94px}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.7;font-size:15px;transition:background .2s,color .2s}a{color:inherit}a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}::selection{background:var(--accent);color:var(--bg)}
-    .wrap{width:min(1060px,calc(100% - 64px));margin-inline:auto}.mono,.eyebrow,.section-kicker,.meta,.pill,.nav-links,.button,.footer,.mini-label{font-family:'DM Mono',monospace}.site-nav{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--border);backdrop-filter:blur(15px)}.nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:73px;gap:24px}.logo{text-decoration:none;font-family:'DM Serif Display',serif;font-size:25px;letter-spacing:-1px}.logo span{color:var(--accent)}.nav-right{display:flex;align-items:center;gap:22px}.nav-links{display:flex;gap:23px;align-items:center;list-style:none;padding:0;margin:0}.nav-links a{font-size:11px;color:var(--muted);text-decoration:none;transition:color .2s}.nav-links a:hover{color:var(--accent)}.theme-toggle,.menu-toggle{background:var(--surface);border:1px solid var(--border);color:var(--text);border-radius:9px;padding:8px 11px;font:12px 'DM Mono',monospace;cursor:pointer}.menu-toggle{display:none}
-    .hero{padding:118px 0 108px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(255px,.7fr);gap:65px;align-items:center}.eyebrow{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:0 0 22px}.hero h1{font-family:'DM Serif Display',serif;font-weight:400;letter-spacing:-.04em;font-size:clamp(62px,8vw,105px);line-height:.99;margin:0 0 27px}.hero h1 em{color:var(--accent)}.hero-lead{font-size:clamp(19px,2.5vw,25px);font-weight:600;line-height:1.4;letter-spacing:-.025em;max-width:630px;margin:0 0 22px}.hero-copy{font-size:15px;color:var(--muted);max-width:620px;margin:0 0 29px}.actions{display:flex;gap:12px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;justify-content:center;padding:12px 17px;font-size:11px;text-decoration:none;border-radius:8px;border:1px solid var(--border);transition:transform .2s,background .2s}.button:hover{transform:translateY(-2px)}.button.primary{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:500}.button.secondary{background:var(--surface)}.hero-panel{border:1px solid var(--border);background:linear-gradient(155deg,var(--surface),var(--bg));border-radius:16px;padding:29px;box-shadow:0 18px 55px var(--shadow)}.mini-label{font-size:10px;text-transform:uppercase;color:var(--accent);letter-spacing:.12em;margin:0 0 18px}.quick-fact{border-top:1px solid var(--border);padding:16px 0}.quick-fact:last-child{padding-bottom:0}.quick-fact small{display:block;color:var(--soft);font-size:11px;margin-bottom:3px}.quick-fact strong{font-weight:600;font-size:14px}.hero-panel .status{display:inline-flex;align-items:center;gap:9px;font-size:12px;color:var(--muted);margin-top:22px}.dot{width:7px;height:7px;background:var(--accent);border-radius:50%}
-    section.content-section{padding:80px 0;border-top:1px solid var(--border)}.section-heading{display:grid;grid-template-columns:220px 1fr;gap:32px;margin-bottom:34px}.section-kicker{font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.14em;margin:5px 0 0}.section-heading h2{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(30px,4vw,43px);letter-spacing:-.02em;line-height:1.2;margin:0}.section-heading .subheading{margin:10px 0 0;color:var(--muted);max-width:650px}.section-content{margin-left:252px}.experience-card{border-top:1px solid var(--border);padding:30px 0 32px}.experience-card:last-child{padding-bottom:0}.exp-head{display:flex;align-items:start;justify-content:space-between;gap:20px}.exp-company{font-family:'DM Serif Display',serif;font-size:27px;margin:0;line-height:1.2}.exp-role{font-weight:600;margin:6px 0 0;font-size:14px}.meta{font-size:10px;color:var(--soft);white-space:nowrap;text-align:right}.exp-body{color:var(--muted);margin:14px 0 0;font-size:14px}.highlights{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}.pill{display:inline-block;font-size:10px;line-height:1.5;padding:5px 9px;border:1px solid var(--border);background:var(--surface);border-radius:6px;color:var(--muted)}
-    .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.project-card{position:relative;min-height:285px;padding:28px;border:1px solid var(--border);border-radius:14px;background:var(--surface);transition:transform .2s,border-color .2s}.project-card:hover{transform:translateY(-3px);border-color:var(--accent)}.project-number{font:11px 'DM Mono',monospace;color:var(--accent)}.project-card h3{font:400 31px 'DM Serif Display',serif;margin:20px 0 10px}.project-card p{font-size:14px;color:var(--muted);margin:0}.project-card .highlights{margin-top:22px}.project-state{position:absolute;right:22px;top:26px;font:10px 'DM Mono',monospace;color:var(--soft)}
-    .skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.skill-card{border:1px solid var(--border);background:var(--surface);border-radius:12px;padding:23px}.skill-card h3{font-size:13px;margin:0 0 14px}.skill-card .highlights{margin:0}.skill-card .pill{background:var(--accent-bg)}.note{font-size:12px;color:var(--soft);margin:16px 0 0}
-    .course-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.course{border:1px solid var(--border);border-radius:10px;padding:18px 20px;background:var(--surface)}.course-code{font:11px 'DM Mono',monospace;color:var(--accent)}.course h3{font-size:14px;font-weight:600;margin:6px 0}.course p{font-size:12px;color:var(--muted);margin:0;line-height:1.7}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.about-block{padding:23px;border-left:2px solid var(--accent);background:var(--surface);border-radius:0 10px 10px 0}.about-block h3{margin:0 0 9px;font-size:13px}.about-block p{font-size:14px;color:var(--muted);margin:0}
-    .contact{padding:85px 0 105px;border-top:1px solid var(--border)}.contact h2{font:400 clamp(40px,6vw,65px) 'DM Serif Display',serif;line-height:1.1;margin:8px 0 15px}.contact h2 em{color:var(--accent)}.contact p{color:var(--muted);max-width:560px;margin:0 0 24px}.footer{border-top:1px solid var(--border);padding:25px 0;color:var(--soft);font-size:10px}.footer-inner{display:flex;justify-content:space-between;gap:20px}.footer a{text-decoration:none}.footer a:hover{color:var(--accent)}
-    @media(max-width:850px){.hero{grid-template-columns:1fr;gap:35px;padding:85px 0 75px}.hero-panel{max-width:480px}.section-heading{grid-template-columns:1fr;gap:5px}.section-content{margin-left:0}.section-heading{margin-bottom:26px}}
-    @media(max-width:620px){.wrap{width:min(100% - 36px,1060px)}.nav-inner{min-height:65px}.menu-toggle{display:block}.nav-right{gap:9px}.nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);padding:18px;flex-direction:column;align-items:start;border-bottom:1px solid var(--border);gap:15px}.nav-links.open{display:flex}.hero{padding:72px 0 65px}.hero h1{font-size:65px}.project-grid,.skill-grid,.course-grid,.about-grid{grid-template-columns:1fr}.exp-head{display:block}.meta{text-align:left;margin-top:8px}.project-card{min-height:0}.section-heading h2{font-size:34px}section.content-section{padding:65px 0}.footer-inner{flex-direction:column;gap:5px}.contact{padding:70px 0}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+    :root{
+      --bg:#EEF1F6; --surface:#FFFFFF; --surface-2:#E4E9F1; --ink:#14213D; --muted:#4A5672; --soft:#6B7690;
+      --line:#D3D9E5; --accent:#2C46D6; --accent-ink:#FFFFFF; --alert:#C98A00; --ok:#1F8A5B;
+      --console:#14213D; --console-2:#1C2B4D; --console-ink:#DCE3F5; --console-dim:#8E9BBB; --console-key:#9FB2FF; --console-str:#F2C14E;
+      --radius-lg:18px; --radius-sm:8px;
+      --display:'Bricolage Grotesque',system-ui,sans-serif; --body:'Instrument Sans',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+      color-scheme:light;
+    }
+    [data-theme="dark"]{
+      --bg:#0E1525; --surface:#151E33; --surface-2:#1B2640; --ink:#E5EAF4; --muted:#A3AEC5; --soft:#7F8AA5;
+      --line:#26314A; --accent:#8EA3FF; --accent-ink:#0E1525; --alert:#F0B429; --ok:#4CC38A;
+      --console:#0A101D; --console-2:#131C30;
+      color-scheme:dark;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:84px}
+    body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body);-webkit-font-smoothing:antialiased;transition:background-color .25s,color .25s}
+    a{color:inherit}
+    img{max-width:100%}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+    ::selection{background:var(--accent);color:var(--accent-ink)}
+    .wrap{width:min(1120px,100% - 48px);margin-inline:auto}
+    .skip{position:absolute;left:-999px;top:12px;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:8px;z-index:100}
+    .skip:focus{left:12px}
+
+    /* Nav */
+    .nav{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+    .nav.scrolled{border-bottom-color:var(--line)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;height:68px}
+    .brand{font:800 20px/1 var(--display);letter-spacing:-.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+    .brand-mark{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--ink);color:var(--bg);font-size:15px}
+    .nav-links{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+    .nav-links a{display:block;padding:8px 12px;border-radius:8px;text-decoration:none;font-size:15px;color:var(--muted);font-weight:500}
+    .nav-links a:hover,.nav-links a[aria-current="true"]{color:var(--ink);background:var(--surface-2)}
+    .nav-actions{display:flex;gap:8px;align-items:center}
+    .icon-btn{width:40px;height:40px;display:grid;place-items:center;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+    .icon-btn svg{width:18px;height:18px}
+    .menu-btn{display:none}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font:600 15px/1 var(--body);text-decoration:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;transition:background-color .15s,border-color .15s}
+    .btn:hover{border-color:var(--ink)}
+    .btn-primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+    .btn-primary:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+    .btn svg{width:16px;height:16px}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;padding:72px 0 88px}
+    .status{display:inline-flex;align-items:center;gap:10px;font-size:15px;color:var(--muted);margin:0 0 26px;padding:6px 14px 6px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+    .pulse{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 55%,transparent);animation:pulse 2.4s infinite}
+    @keyframes pulse{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+    .hero h1{font:800 clamp(64px,9.6vw,124px)/.86 var(--display);letter-spacing:-.045em;margin:0 0 28px}
+    .hero h1 span{display:block}
+    .hero h1 .last{padding-left:.5em}
+    .lede{font-size:clamp(19px,2vw,22px);line-height:1.5;color:var(--ink);max-width:31ch;margin:0 0 14px;font-weight:500}
+    .hero-sub{color:var(--muted);max-width:48ch;margin:0 0 32px}
+    .actions{display:flex;flex-wrap:wrap;gap:10px}
+
+    /* Console */
+    .console{background:var(--console);color:var(--console-ink);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 30px 60px -30px rgba(20,33,61,.55),0 0 0 1px rgba(255,255,255,.04) inset;font:400 13.5px/1.6 var(--mono)}
+    .console-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;background:var(--console-2);border-bottom:1px solid rgba(255,255,255,.06)}
+    .console-title{font:500 13px/1 var(--body);color:var(--console-dim)}
+    .console-title b{color:var(--console-ink);font-weight:600}
+    .console-tabs{display:flex;gap:6px;flex-wrap:wrap}
+    .qtab{font:500 12.5px/1 var(--mono);color:var(--console-dim);background:transparent;border:1px solid rgba(255,255,255,.12);border-radius:7px;padding:7px 10px;cursor:pointer}
+    .qtab:hover{color:var(--console-ink);border-color:rgba(255,255,255,.3)}
+    .qtab[aria-selected="true"]{background:var(--console-ink);color:var(--console);border-color:var(--console-ink)}
+    .console-body{padding:20px 20px 18px;min-height:290px}
+    .query{display:flex;gap:10px;margin:0 0 16px;white-space:pre-wrap;word-break:break-word}
+    .prompt{color:var(--console-dim);user-select:none}
+    .q-key{color:var(--console-key)}
+    .q-str{color:var(--console-str)}
+    .q-pipe{color:var(--console-dim)}
+    .caret{display:inline-block;width:8px;height:1.1em;background:var(--console-ink);vertical-align:-3px;animation:blink 1s steps(1) infinite}
+    @keyframes blink{50%{opacity:0}}
+    .meta-line{color:var(--console-dim);font-size:12.5px;margin:0 0 10px;min-height:1.6em}
+    .results{width:100%;border-collapse:collapse;font-size:13px}
+    .results th{text-align:left;color:var(--console-dim);font-weight:500;padding:7px 10px;border-bottom:1px solid rgba(255,255,255,.1)}
+    .results td:first-child{white-space:nowrap}
+    .results td{padding:8px 10px;border-bottom:1px solid rgba(255,255,255,.05);vertical-align:top}
+    .results tr.row-in{animation:rowin .28s ease-out both}
+    @keyframes rowin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+    .sev{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:8px;vertical-align:1px;background:var(--console-key)}
+    .sev.amber{background:var(--console-str)}
+    .sev.green{background:#4CC38A}
+    .console-foot{padding:0 20px 16px;color:var(--console-dim);font:400 12px/1.5 var(--body)}
+
+    /* Sections */
+    .section{padding:96px 0;border-top:1px solid var(--line)}
+    .sec-head{display:grid;grid-template-columns:280px 1fr;gap:48px;margin-bottom:48px;align-items:end}
+    .sec-head h2{font:700 clamp(36px,4.4vw,52px)/1 var(--display);letter-spacing:-.03em;margin:0}
+    .sec-head p{margin:0;color:var(--muted);max-width:56ch}
+
+    /* Experience timeline */
+    .timeline{list-style:none;margin:0;padding:0;position:relative}
+    .job{display:grid;grid-template-columns:280px 1fr;gap:48px;padding:36px 0;border-top:1px solid var(--line);position:relative}
+    .job:first-child{border-top:0;padding-top:0}
+    .when{font-variant-numeric:tabular-nums;color:var(--muted);font-size:15px}
+    .when strong{display:block;color:var(--ink);font-weight:600;font-size:16px}
+    .job h3{font:700 28px/1.15 var(--display);letter-spacing:-.02em;margin:0}
+    .role{margin:4px 0 16px;color:var(--muted);font-weight:500}
+    .job ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;max-width:68ch}
+    .job li{position:relative;padding-left:22px}
+    .job li::before{content:"";position:absolute;left:2px;top:.68em;width:8px;height:2px;background:var(--accent)}
+    .tools{margin:18px 0 0;color:var(--soft);font-size:15px}
+    .tools b{color:var(--muted);font-weight:600}
+    .job.current h3::after{content:"Most recent";margin-left:12px;vertical-align:5px;font:600 12px/1 var(--body);padding:5px 9px;border-radius:999px;background:color-mix(in srgb,var(--alert) 18%,transparent);color:var(--ink)}
+
+    /* Projects */
+    .feature{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:24px}
+    .feature-copy{padding:40px}
+    .feature-copy h3{font:800 44px/1 var(--display);letter-spacing:-.035em;margin:0 0 6px}
+    .tagline{color:var(--accent);font-weight:600;margin:0 0 18px}
+    .feature-copy p{margin:0 0 14px;color:var(--muted)}
+    .facts{list-style:none;padding:0;margin:20px 0 26px;display:grid;gap:8px;font-size:15px}
+    .facts li{display:grid;grid-template-columns:96px 1fr;gap:12px}
+    .facts span{color:var(--soft)}
+    .proj-links{display:flex;gap:10px;flex-wrap:wrap}
+    .stage{background:var(--surface-2);display:grid;place-items:center;padding:36px 36px 60px;min-height:440px;position:relative}
+    .feature.flip .stage{order:-1}
+
+    /* Tab phone mock */
+    .phone{width:244px;background:var(--surface);border-radius:32px;padding:14px;box-shadow:0 24px 50px -24px rgba(20,33,61,.45);border:1px solid var(--line)}
+    .phone-screen{border-radius:22px;background:var(--bg);padding:18px 16px;font-size:13px}
+    .ph-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+    .ph-logo{font:800 20px/1 var(--display);letter-spacing:-.03em}
+    .ph-table{font-size:12px;color:var(--muted);background:var(--surface);border:1px solid var(--line);padding:3px 8px;border-radius:999px}
+    .ph-item{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed var(--line)}
+    .ph-split{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:14px 0 10px}
+    .ph-split button{font:600 12px/1 var(--body);padding:9px 0;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+    .ph-split button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+    .ph-tip{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-bottom:12px}
+    .ph-total{display:flex;justify-content:space-between;font-weight:600;font-size:15px;margin-bottom:12px}
+    .ph-pay{width:100%;padding:12px;border-radius:12px;border:0;background:var(--accent);color:var(--accent-ink);font:600 14px/1 var(--body)}
+    .stage-note{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-size:13px;color:var(--soft)}
+
+    /* StudyCafe map mock */
+    .map{width:100%;max-width:420px;aspect-ratio:4/3.3;border-radius:16px;overflow:hidden;position:relative;background:
+      linear-gradient(90deg,transparent 47%,color-mix(in srgb,var(--line) 90%,var(--ink) 10%) 47% 49%,transparent 49%),
+      linear-gradient(0deg,transparent 30%,color-mix(in srgb,var(--line) 90%,var(--ink) 10%) 30% 32%,transparent 32%),
+      linear-gradient(35deg,transparent 60%,var(--line) 60% 61.5%,transparent 61.5%),
+      linear-gradient(-20deg,transparent 72%,var(--line) 72% 73%,transparent 73%),
+      var(--surface);border:1px solid var(--line)}
+    .river{position:absolute;inset:0;background:radial-gradient(120% 40% at 10% 110%,color-mix(in srgb,var(--accent) 18%,transparent) 40%,transparent 41%)}
+    .pin{position:absolute;width:26px;height:26px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--ink);border:2px solid var(--surface);display:grid;place-items:center;box-shadow:0 6px 14px -6px rgba(0,0,0,.4);transition:background-color .2s,opacity .2s}
+    .pin::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--surface)}
+    .pin.match{background:var(--accent)}
+    .pin.dim{opacity:.25}
+    .map-chips{position:absolute;left:12px;right:12px;top:12px;display:flex;flex-wrap:wrap;gap:6px}
+    .chip{font:600 12px/1 var(--body);padding:7px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+    .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+    .map-count{position:absolute;right:12px;bottom:12px;font-size:12px;background:var(--surface);border:1px solid var(--line);padding:6px 10px;border-radius:8px}
+
+    .more{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+    .mini{padding:28px;border:1px solid var(--line);border-radius:14px;background:transparent}
+    .mini h3{font:700 22px/1.2 var(--display);letter-spacing:-.02em;margin:0 0 4px}
+    .mini .kind{font-size:14px;color:var(--soft);margin:0 0 12px}
+    .mini p{margin:0;color:var(--muted);font-size:15.5px}
+
+    /* Skills */
+    .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--ink)}
+    .skill-col{padding:22px 24px 8px 0}
+    .skill-col + .skill-col{padding-left:24px;border-left:1px solid var(--line)}
+    .skill-col h3{font:700 18px/1.25 var(--display);margin:0 0 14px}
+    .skill-col ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;color:var(--muted);font-size:15.5px}
+
+    /* Education */
+    .edu{display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:34px}
+    .card h3{font:700 26px/1.15 var(--display);letter-spacing:-.02em;margin:0 0 4px}
+    .card .sub{color:var(--muted);margin:0 0 22px}
+    .courses{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;list-style:none;margin:0;padding:0;font-size:15.5px}
+    .courses li{padding:10px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}
+    .courses .c{color:var(--soft);font-variant-numeric:tabular-nums;white-space:nowrap}
+    .ip{font-size:12px;color:var(--ink);background:color-mix(in srgb,var(--alert) 20%,transparent);border-radius:999px;padding:2px 8px;margin-left:6px;white-space:nowrap}
+    .stack{display:grid;gap:24px}
+    .card p{color:var(--muted);margin:0 0 10px}
+    .card p:last-child{margin-bottom:0}
+
+    /* Contact */
+    .contact{padding:110px 0 120px;border-top:1px solid var(--line)}
+    .contact h2{font:800 clamp(48px,7vw,92px)/.95 var(--display);letter-spacing:-.04em;margin:0 0 22px;max-width:14ch}
+    .contact p{color:var(--muted);max-width:52ch;margin:0 0 34px;font-size:19px}
+    .email-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+    .email{font:600 clamp(22px,3vw,32px)/1.2 var(--display);letter-spacing:-.02em;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:2px}
+    .email:hover{color:var(--accent)}
+    .copy-btn[data-done="true"]{border-color:var(--ok);color:var(--ok)}
+    .socials{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
+    footer{border-top:1px solid var(--line);padding:26px 0;color:var(--soft);font-size:14px}
+    .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    footer a{text-decoration:none}
+    footer a:hover{color:var(--ink)}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;gap:44px;padding-top:48px}
+      .sec-head,.job{grid-template-columns:1fr;gap:12px}
+      .feature{grid-template-columns:1fr}
+      .feature.flip .stage{order:0}
+      .more{grid-template-columns:1fr 1fr}
+      .skills{grid-template-columns:1fr 1fr}
+      .skill-col:nth-child(3){padding-left:0;border-left:0}
+      .skill-col{border-top:1px solid var(--line)}
+      .edu{grid-template-columns:1fr}
+    }
+    @media (max-width:720px){
+      body{font-size:16px}
+      .wrap{width:min(1120px,100% - 32px)}
+      .menu-btn{display:grid}
+      .nav-links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 16px 16px}
+      .nav-links.open{display:flex}
+      .nav-resume{display:none}
+      .hero h1 .last{padding-left:0}
+      .section{padding:72px 0}
+      .feature-copy{padding:28px}
+      .feature-copy h3{font-size:36px}
+      .stage{min-height:360px;padding:28px 20px 44px}
+      .more,.skills,.courses{grid-template-columns:1fr}
+      .skill-col,.skill-col + .skill-col{padding:20px 0 8px;border-left:0}
+      .console-bar{flex-direction:column;align-items:flex-start}
+      .console-body{min-height:300px;padding:16px}
+      .results{font-size:12px}
+      .results td,.results th{padding:6px 6px}
+      .card{padding:26px}
+      .job.current h3::after{display:inline-block;margin:8px 0 0;vertical-align:0}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none!important;transition:none!important}
+    }
   </style>
 </head>
 <body>
-  <header class="site-nav"><div class="wrap nav-inner">
-    <a class="logo" href="#top" aria-label="Hamza Babar, home">hb<span>.</span></a>
-    <div class="nav-right"><nav aria-label="Main navigation"><ul class="nav-links" id="navLinks"><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li></ul></nav><button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to light theme">☀ Light</button><button id="menuToggle" class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks">☰</button></div>
-  </div></header>
-  <main id="top">
-    <div class="wrap"><section class="hero" aria-labelledby="hero-title"><div>
-      <p class="eyebrow">Computer Science · Western University · Class of 2027</p>
-      <h1 id="hero-title">Hamza<br><em>Babar.</em></h1>
-      <p class="hero-lead">Building at the intersection of cybersecurity, software, and business.</p>
-      <p class="hero-copy">I'm a Computer Science student at Western University with hands-on experience in security operations and technology consulting. From monitoring threats for fintech clients to developing software and exploring new product ideas, I enjoy turning technical challenges into practical solutions. I'm especially interested in cybersecurity, technical problem-solving, and technology that improves how people and businesses work.</p>
-      <div class="actions"><a class="button primary" href="#experience">Explore my experience ↗</a><a class="button secondary" href="./Hamza_Babar_Resume.pdf" target="_blank" rel="noopener noreferrer">View Resume ↗</a><a class="button secondary" href="mailto:hkbabar10@gmail.com">Get in touch ↗</a></div>
-    </div><aside class="hero-panel" aria-label="At a glance"><p class="mini-label">At a glance / 2026</p><div class="quick-fact"><small>Education</small><strong>B.Sc. Computer Science · Western University</strong></div><div class="quick-fact"><small>Experience</small><strong>Deloitte · PwC · iSolution · KPMG</strong></div><div class="quick-fact"><small>Focus</small><strong>Security Operations · Technology Consulting · Software</strong></div><div class="quick-fact"><small>Based in</small><strong>Ontario, Canada</strong></div><div class="status"><span class="dot" aria-hidden="true"></span>Graduating in 2027 · Exploring early-career opportunities</div></aside></section></div>
+  <a class="skip" href="#main">Skip to content</a>
 
-    <section class="content-section" id="experience"><div class="wrap"><div class="section-heading"><p class="section-kicker">01 / Experience</p><div><h2>Experience that connects technical depth with real business needs.</h2><p class="subheading">Security operations, client delivery, analysis, and cross-functional collaboration.</p></div></div><div class="section-content">
-      <article class="experience-card"><div class="exp-head"><div><h3 class="exp-company">Deloitte Middle East</h3><p class="exp-role">SOC Analyst Intern · Technology & Transformation, Cyber Operate</p></div><span class="meta">Jul – Sep 2026<br>Abu Dhabi, UAE</span></div><p class="exp-body">Supported day-to-day cybersecurity operations for three fintech clients, investigating security alerts, analyzing threats, and assisting with incident triage and vulnerability management. Worked across SIEM, endpoint management, vulnerability scanning, and brand-protection platforms to help identify risks and support response workflows. Beyond security monitoring, contributed to weekly client reports, KPI dashboards, operational runbooks, technical proposals, and onboarding documentation—connecting hands-on security work with clear stakeholder communication and service delivery.</p><div class="highlights"><span class="pill">Splunk SIEM</span><span class="pill">Tenable</span><span class="pill">ManageEngine Endpoint Central</span><span class="pill">iZOOlogic</span><span class="pill">Incident Triage</span><span class="pill">Client Reporting</span></div></article>
-      <article class="experience-card"><div class="exp-head"><div><h3 class="exp-company">iSolution</h3><p class="exp-role">SOC Analyst Intern</p></div><span class="meta">May – Jun 2025<br>Dubai, UAE</span></div><p class="exp-body">Supported security monitoring and incident investigation by developing Splunk dashboards, working with correlation rules, and analyzing logs to surface suspicious activity. Also created a Google Cloud threat-hunting playbook to document investigative workflows and strengthen the consistency of security analysis.</p><div class="highlights"><span class="pill">Splunk</span><span class="pill">Security Monitoring</span><span class="pill">Threat Hunting</span><span class="pill">Google Cloud</span></div></article>
-      <article class="experience-card"><div class="exp-head"><div><h3 class="exp-company">PwC</h3><p class="exp-role">Consulting Intern</p></div><span class="meta">2025<br>Dubai, UAE</span></div><p class="exp-body">Contributed to a consulting engagement involving ADNOC by supporting business-process mapping across organizational units, building KPI dashboards, and preparing analysis related to technology processes and IT governance. Developed experience translating complex business operations into structured findings for client teams.</p><div class="highlights"><span class="pill">Process Mapping</span><span class="pill">KPI Dashboards</span><span class="pill">IT Governance</span><span class="pill">Consulting</span></div></article>
-      <article class="experience-card"><div class="exp-head"><div><h3 class="exp-company">KPMG</h3><p class="exp-role">IT & Technology Shadowing</p></div><span class="meta">Jul 2025<br>Toronto, Canada</span></div><p class="exp-body">Gained exposure to professional technology services and the ways consulting teams approach client needs, technology operations, and stakeholder collaboration.</p><div class="highlights"><span class="pill">Technology Advisory Exposure</span><span class="pill">Professional Services</span></div></article>
-    </div></div></section>
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Hamza Babar, back to top"><span class="brand-mark">hb</span>Hamza Babar</a>
+      <nav aria-label="Main">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn nav-resume" href="./Hamza_Babar_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path id="themeIcon" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <section class="content-section" id="projects"><div class="wrap"><div class="section-heading"><p class="section-kicker">02 / Projects</p><div><h2>Ideas I'm turning into products.</h2><p class="subheading">Current independent projects, focused on practical user experiences.</p></div></div><div class="section-content project-grid">
-      <article class="project-card"><span class="project-number">PROJECT 01</span><span class="project-state">In development</span><h3>Tab</h3><p>A restaurant payment platform designed to make settling the bill faster and more convenient. Guests scan a QR code at their table to access their bill from their phone, review charges, split payments where supported, add a tip, and pay without waiting for a card terminal. The product concept also considers the restaurant side: streamlined payment workflows, clearer table-level visibility, and a smoother checkout experience for staff and customers. The focus is a simple, mobile-first experience supported by secure payment processing and restaurant-system integration.</p><div class="highlights"><span class="pill">QR-Code Checkout</span><span class="pill">Digital Payments</span><span class="pill">Product Design</span><span class="pill">Restaurant Technology</span></div></article>
-      <article class="project-card"><span class="project-number">PROJECT 02</span><span class="project-state">Concept / In development</span><h3>Habit Tracking App</h3><p>A goal-oriented habit tracking application focused on helping users build consistent routines, monitor progress over time, and stay accountable through structured goal tracking and performance insights.</p><div class="highlights"><span class="pill">Goal Tracking</span><span class="pill">Progress Analytics</span><span class="pill">Application Design</span></div></article>
-    </div></div></section>
+  <main id="main">
+    <div class="wrap" id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="status"><span class="pulse" aria-hidden="true"></span>Open to new-grad roles from summer 2027</p>
+          <h1 id="hero-title"><span>Hamza</span><span class="last">Babar</span></h1>
+          <p class="lede">I protect systems for a living and build products on the side.</p>
+          <p class="hero-sub">I'm a Computer Science student at Western University, graduating in 2027. I most recently worked as a SOC analyst intern at Deloitte Middle East, triaging alerts for three fintech clients. I'm looking for roles in security operations, cyber consulting and technology risk in Toronto.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#experience">See my experience</a>
+            <a class="btn" href="./Hamza_Babar_Resume.pdf" target="_blank" rel="noopener">Download resume</a>
+          </div>
+        </div>
 
-    <section class="content-section" id="skills"><div class="wrap"><div class="section-heading"><p class="section-kicker">03 / Skills</p><div><h2>A mix of engineering, security, and client-facing skills.</h2></div></div><div class="section-content skill-grid">
-      <div class="skill-card"><h3>Cybersecurity Operations</h3><div class="highlights"><span class="pill">Security Monitoring</span><span class="pill">Incident Triage</span><span class="pill">Threat Analysis</span><span class="pill">Vulnerability Management</span><span class="pill">Endpoint Security</span><span class="pill">Log Analysis</span><span class="pill">Threat Hunting</span></div></div>
-      <div class="skill-card"><h3>Security Tools & Platforms</h3><div class="highlights"><span class="pill">Splunk SIEM</span><span class="pill">Microsoft Sentinel</span><span class="pill">Tenable</span><span class="pill">ManageEngine Endpoint Central</span><span class="pill">iZOOlogic</span><span class="pill">Google Cloud</span></div></div>
-      <div class="skill-card"><h3>Programming & Computer Science</h3><div class="highlights"><span class="pill">Python</span><span class="pill">Java</span><span class="pill">C++</span><span class="pill">SQL / Databases</span><span class="pill">Git / GitHub</span><span class="pill">Networking</span><span class="pill">Operating Systems</span><span class="pill">Data Structures</span></div></div>
-      <div class="skill-card"><h3>Consulting & Delivery</h3><div class="highlights"><span class="pill">KPI Dashboards</span><span class="pill">Stakeholder Communication</span><span class="pill">Technical Documentation</span><span class="pill">Client Reporting</span><span class="pill">Process Mapping</span><span class="pill">RFP Support</span><span class="pill">Cross-functional Collaboration</span></div></div>
-    </div></div></section>
+        <div class="console" aria-label="Interactive search console">
+          <div class="console-bar">
+            <span class="console-title"><b>search</b> · hamza-babar</span>
+            <div class="console-tabs" role="tablist" aria-label="Preset searches">
+              <button class="qtab" role="tab" aria-selected="true" data-q="career">career</button>
+              <button class="qtab" role="tab" aria-selected="false" data-q="experience">experience</button>
+              <button class="qtab" role="tab" aria-selected="false" data-q="stack">stack</button>
+            </div>
+          </div>
+          <div class="console-body" aria-live="polite">
+            <div class="query"><span class="prompt" aria-hidden="true">&gt;</span><code id="queryText"></code></div>
+            <p class="meta-line" id="metaLine"></p>
+            <table class="results" id="results"></table>
+          </div>
+          <p class="console-foot">Pick a search above to run it.</p>
+        </div>
+      </section>
+    </div>
 
-    <section class="content-section" id="education"><div class="wrap"><div class="section-heading"><p class="section-kicker">04 / Education</p><div><h2>Computer science foundations, applied to real problems.</h2><p class="subheading"><strong>Western University</strong> · Bachelor of Science, Computer Science · Expected graduation 2027</p></div></div><div class="section-content"><div class="course-grid">
-      <div class="course"><span class="course-code">CS 2208</span><h3>Computer Organization</h3><p>Low-level computing concepts, computer architecture, and how software interacts with hardware.</p></div>
-      <div class="course"><span class="course-code">CS 2209</span><h3>Applied Logic for Computer Science</h3><p>Formal reasoning, logical expressions, and rigorous approaches to solving computational problems.</p></div>
-      <div class="course"><span class="course-code">CS 2210</span><h3>Data Structures & Algorithms</h3><p>Choosing efficient data structures and algorithms, with attention to complexity and performance.</p></div>
-      <div class="course"><span class="course-code">CS 2211</span><h3>Software Tools & Systems Programming</h3><p>Command-line development, programming tools, scripting, and practical software workflows.</p></div>
-      <div class="course"><span class="course-code">CS 3305</span><h3>Operating Systems</h3><p>Processes, scheduling, synchronization, memory management, and system-level tradeoffs.</p></div>
-      <div class="course"><span class="course-code">CS 3307</span><h3>Software Engineering</h3><p>Object-oriented design, team-based development, testing, and maintainable software systems.</p></div>
-      <div class="course"><span class="course-code">CS 3319</span><h3>Databases <span style="font-weight:400;color:var(--soft)">· In progress</span></h3><p>Relational modeling, entity relationships, database design, and indexing concepts.</p></div>
-      <div class="course"><span class="course-code">CS 3357</span><h3>Computer Networks <span style="font-weight:400;color:var(--soft)">· In progress</span></h3><p>Network protocols, the layered internet architecture, DNS, and communication between systems.</p></div>
-    </div><div class="skill-card" style="margin-top:16px"><h3>Additional Learning</h3><p style="margin:0;color:var(--muted);font-size:14px">IBM Z Xplore — hands-on learning focused on enterprise computing and IBM Z technologies.</p><p class="note">Developed foundational knowledge of enterprise computing and IBM Z mainframe systems through hands-on technical challenges. Gained experience with z/OS, Linux, Python, JCL, REXX, COBOL, and SQL while exploring data management, system operations, and automation. Studied enterprise cybersecurity, system reliability, high availability, and scalability, gaining an understanding of how large organizations, particularly financial institutions, manage and secure mission-critical computing infrastructure.</p></div></div></div></section>
+    <section class="section" id="experience" aria-labelledby="exp-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="exp-title">Experience</h2>
+          <p>Security operations in a live SOC, plus consulting work translating technology into decisions clients can act on.</p>
+        </div>
+        <ol class="timeline" reversed>
+          <li class="job current">
+            <div class="when"><strong>Jul – Sep 2026</strong>Abu Dhabi, UAE</div>
+            <div>
+              <h3>Deloitte Middle East</h3>
+              <p class="role">SOC Analyst Intern, Cyber Operate (Technology &amp; Transformation)</p>
+              <ul>
+                <li>Monitored and triaged security alerts for three fintech clients in Splunk SIEM, investigating suspicious activity and escalating confirmed incidents through response workflows.</li>
+                <li>Supported vulnerability management with Tenable scans and remediation tracking, and endpoint security and mobile device management in ManageEngine Endpoint Central.</li>
+                <li>Monitored brand-protection alerts in iZOOlogic for phishing and impersonation targeting client brands.</li>
+                <li>Produced weekly client reports and KPI dashboards, and wrote operational runbooks and onboarding documentation.</li>
+                <li>Contributed to technical and commercial proposals and RFP responses for new security engagements.</li>
+              </ul>
+              <p class="tools"><b>Tools:</b> Splunk, Tenable, ManageEngine Endpoint Central, iZOOlogic</p>
+            </div>
+          </li>
+          <li class="job">
+            <div class="when"><strong>Jul 2025</strong>Toronto, Canada</div>
+            <div>
+              <h3>KPMG</h3>
+              <p class="role">IT &amp; Technology Shadowing</p>
+              <ul>
+                <li>Shadowed technology advisory teams to see how they scope client needs, run technology operations and work with stakeholders.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job">
+            <div class="when"><strong>May – Jun 2025</strong>Dubai, UAE</div>
+            <div>
+              <h3>iSolution</h3>
+              <p class="role">SOC Analyst Intern</p>
+              <ul>
+                <li>Built Splunk dashboards and tuned correlation rules to surface suspicious activity in log data.</li>
+                <li>Analyzed logs during incident investigations to support the security monitoring team.</li>
+                <li>Wrote a Google Cloud threat-hunting playbook that standardised investigation steps across analysts.</li>
+              </ul>
+              <p class="tools"><b>Tools:</b> Splunk, Google Cloud</p>
+            </div>
+          </li>
+          <li class="job">
+            <div class="when"><strong>2025</strong>Dubai, UAE</div>
+            <div>
+              <h3>PwC</h3>
+              <p class="role">Technology &amp; Data Advisory Intern</p>
+              <ul>
+                <li>Mapped business processes across organizational units on an engagement for ADNOC.</li>
+                <li>Built KPI dashboards and prepared analysis on technology processes and IT governance.</li>
+                <li>Turned complex operations into structured findings for the client team.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-    <section class="content-section" id="about"><div class="wrap"><div class="section-heading"><p class="section-kicker">05 / About</p><div><h2>Curiosity, ownership, and a global perspective.</h2></div></div><div class="section-content about-grid"><div class="about-block"><h3>Background</h3><p>With experiences spanning the UAE and Canada, I've had the opportunity to learn from different teams, industries, and working styles. That perspective shapes how I approach collaboration and problem-solving.</p></div><div class="about-block"><h3>What motivates me</h3><p>I’m interested in both protecting complex systems and building better ones. I enjoy learning new tools, understanding how technology creates value, and taking ideas from early concepts toward useful products.</p></div></div></div></section>
+    <section class="section" id="projects" aria-labelledby="proj-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="proj-title">Projects</h2>
+          <p>Products I'm building for real people in London, Ontario, plus team and coursework projects.</p>
+        </div>
 
-    <section class="contact" id="contact"><div class="wrap"><p class="section-kicker">06 / Contact</p><h2>Let's build something <em>meaningful.</em></h2><p>Interested in cybersecurity, technology consulting, software development, or connecting about an opportunity? I'd love to hear from you.</p><div class="actions"><a class="button primary" href="mailto:hkbabar10@gmail.com">Email me ↗</a><a class="button secondary" href="https://linkedin.com/in/hamza-khan-babar" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="button secondary" href="https://github.com/hkbabar10" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></section>
+        <article class="feature" aria-labelledby="tab-title">
+          <div class="feature-copy">
+            <h3 id="tab-title">tab.</h3>
+            <p class="tagline">Pay at the table without waiting for the card machine.</p>
+            <p>Guests scan a QR code at their table to open their bill on their phone. From there they can review the items, split the bill, add a tip and pay. For restaurants, it means faster table turns and a clear view of which tables have paid.</p>
+            <ul class="facts">
+              <li><span>Stack</span>React, TypeScript</li>
+              <li><span>Market</span>Restaurants in London, Ontario</li>
+              <li><span>Status</span>In development</li>
+            </ul>
+            <div class="proj-links">
+              <a class="btn" href="https://github.com/hkbabar10/Tab" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="phone" aria-label="Interactive preview of the Tab bill-splitting screen">
+              <div class="phone-screen">
+                <div class="ph-top"><span class="ph-logo">tab.</span><span class="ph-table">Table 12</span></div>
+                <div class="ph-item"><span>2 × Margherita</span><span>$38.00</span></div>
+                <div class="ph-item"><span>Caesar salad</span><span>$14.00</span></div>
+                <div class="ph-item"><span>3 × Lemonade</span><span>$15.00</span></div>
+                <div class="ph-split" role="group" aria-label="Split between">
+                  <button type="button" data-split="1" aria-pressed="false">Just me</button>
+                  <button type="button" data-split="2" aria-pressed="false">2 ways</button>
+                  <button type="button" data-split="3" aria-pressed="true">3 ways</button>
+                </div>
+                <div class="ph-tip"><span>Tip 18% + tax 13%</span><span id="tipAmt"></span></div>
+                <div class="ph-total"><span>Your share</span><span id="shareAmt"></span></div>
+                <button class="ph-pay" type="button" tabindex="-1">Pay with Apple Pay</button>
+              </div>
+            </div>
+            <p class="stage-note">Try splitting the bill</p>
+          </div>
+        </article>
+
+        <article class="feature flip" aria-labelledby="sc-title">
+          <div class="feature-copy">
+            <h3 id="sc-title">StudyCafe</h3>
+            <p class="tagline">Find a study spot off campus.</p>
+            <p>A map-first study-spot finder for Western students who can't find a seat in Weldon. It pulls cafés from OpenStreetMap around your location or any area of the map, sorts them nearest first, and filters them by what matters for studying: quiet, Wi-Fi, outlets, open late and room for a group.</p>
+            <p>Filtering runs entirely in the browser and personal notes are stored on your device. Requests to the free public APIs are limited by cooldowns, caching and timeouts.</p>
+            <ul class="facts">
+              <li><span>Stack</span>Vanilla JavaScript, Leaflet, Overpass API</li>
+              <li><span>Built for</span>Accessibility, privacy, no build step</li>
+              <li><span>Next</span>Exam-season mode, community study reports</li>
+            </ul>
+            <div class="proj-links">
+              <a class="btn" href="https://github.com/hkbabar10/Cafe-Finder" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+          <div class="stage">
+            <div class="map" aria-label="Interactive preview of StudyCafe filters">
+              <div class="river" aria-hidden="true"></div>
+              <div class="map-chips" role="group" aria-label="Study filters">
+                <button class="chip" type="button" data-f="quiet" aria-pressed="false">Quiet</button>
+                <button class="chip" type="button" data-f="wifi" aria-pressed="false">Wi-Fi</button>
+                <button class="chip" type="button" data-f="outlets" aria-pressed="false">Outlets</button>
+                <button class="chip" type="button" data-f="late" aria-pressed="false">Open late</button>
+              </div>
+              <span class="pin" style="left:22%;top:40%" data-tags="quiet wifi outlets" aria-hidden="true"></span>
+              <span class="pin" style="left:58%;top:34%" data-tags="wifi late" aria-hidden="true"></span>
+              <span class="pin" style="left:40%;top:60%" data-tags="quiet wifi outlets late" aria-hidden="true"></span>
+              <span class="pin" style="left:74%;top:56%" data-tags="outlets" aria-hidden="true"></span>
+              <span class="pin" style="left:30%;top:78%" data-tags="wifi" aria-hidden="true"></span>
+              <span class="pin" style="left:84%;top:30%" data-tags="quiet late" aria-hidden="true"></span>
+              <span class="map-count" id="mapCount" aria-live="polite">6 spots nearby</span>
+            </div>
+            <p class="stage-note">Toggle filters to narrow the spots</p>
+          </div>
+        </article>
+
+        <div class="more">
+          <article class="mini">
+            <h3>CityPulse</h3>
+            <p class="kind">AI recommendations</p>
+            <p>An AI-powered recommender that suggests things to do around a city based on what you're in the mood for.</p>
+          </article>
+          <article class="mini">
+            <h3>CourseFlow</h3>
+            <p class="kind">Team project, Java and SQL</p>
+            <p>A team-built course-planning application with a Java backend and a relational database.</p>
+          </article>
+          <article class="mini">
+            <h3>Habit tracker</h3>
+            <p class="kind">Concept</p>
+            <p>A goal-based habit tracker that helps users build routines, track progress over time and stay accountable.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="skills-title">Skills</h2>
+          <p>What I've used on the job and in my projects.</p>
+        </div>
+        <div class="skills">
+          <div class="skill-col">
+            <h3>Security operations</h3>
+            <ul><li>Alert triage and escalation</li><li>Log analysis</li><li>Threat hunting</li><li>Vulnerability management</li><li>Endpoint security and MDM</li><li>Brand protection</li></ul>
+          </div>
+          <div class="skill-col">
+            <h3>Platforms</h3>
+            <ul><li>Splunk SIEM</li><li>Microsoft Sentinel</li><li>Tenable</li><li>ManageEngine Endpoint Central</li><li>iZOOlogic</li><li>Google Cloud</li></ul>
+          </div>
+          <div class="skill-col">
+            <h3>Engineering</h3>
+            <ul><li>Python, Java, C++</li><li>JavaScript, TypeScript, React</li><li>SQL and database design</li><li>Networking and operating systems</li><li>Git and GitHub</li><li>z/OS, JCL, REXX, COBOL</li></ul>
+          </div>
+          <div class="skill-col">
+            <h3>Consulting</h3>
+            <ul><li>Client reporting</li><li>KPI dashboards</li><li>Process mapping</li><li>IT governance</li><li>Proposals and RFPs</li><li>Runbooks and documentation</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education" aria-labelledby="edu-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="edu-title">Education</h2>
+          <p>Computer science fundamentals with a focus on systems, networks and data, plus leadership in Western's CS student society.</p>
+        </div>
+        <div class="edu">
+          <div class="card">
+            <h3>Western University</h3>
+            <p class="sub">BSc, Computer Science. London, Ontario. Expected 2027.</p>
+            <ul class="courses">
+              <li>Operating Systems <span class="c">CS 3305</span></li>
+              <li>Software Engineering <span class="c">CS 3307</span></li>
+              <li><span>Databases<span class="ip">In progress</span></span> <span class="c">CS 3319</span></li>
+              <li><span>Computer Networks<span class="ip">In progress</span></span> <span class="c">CS 3357</span></li>
+              <li>Data Structures &amp; Algorithms <span class="c">CS 2210</span></li>
+              <li>Systems Programming <span class="c">CS 2211</span></li>
+              <li>Computer Organization <span class="c">CS 2208</span></li>
+              <li>Applied Logic <span class="c">CS 2209</span></li>
+            </ul>
+          </div>
+          <div class="stack">
+            <div class="card">
+              <h3>Events Coordinator</h3>
+              <p class="sub">Computer Science Undergraduate Society (CSUS)</p>
+              <p>I plan networking events and hackathons for Western's computer science students, working with sponsors, venues and the CSUS executive team.</p>
+            </div>
+            <div class="card">
+              <h3>IBM Z Xplore</h3>
+              <p class="sub">Master the Mainframe (CS 4478Y)</p>
+              <p>Hands-on challenges on IBM Z covering z/OS, JCL, REXX, COBOL, Python and SQL. I also studied how banks and other financial institutions keep mainframe systems secure, reliable and highly available.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title">Hiring for security or consulting?</h2>
+        <p>I'm looking for full-time roles starting in summer or fall 2027, in Toronto first. I'm happy to talk about SOC work, cyber consulting, technology risk, or anything I've built here.</p>
+        <div class="email-row">
+          <a class="email" href="mailto:hkbabar10@gmail.com">hkbabar10@gmail.com</a>
+          <button class="btn copy-btn" id="copyEmail" type="button">Copy email</button>
+        </div>
+        <div class="socials">
+          <a class="btn" href="https://linkedin.com/in/hamza-khan-babar" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/hkbabar10" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="./Hamza_Babar_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="footer"><div class="wrap footer-inner"><span>© <span id="year">2026</span> Hamza Babar · Designed with intention.</span><span>Ontario, Canada · <a href="#top">Back to top ↑</a></span></div></footer>
+
+  <footer>
+    <div class="wrap foot">
+      <span>© <span id="year">2026</span> Hamza Babar</span>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
   <script>
+  (function(){
     const root=document.documentElement;
-    const themeButton=document.getElementById('themeToggle');
-    const savedTheme=(()=>{try{return localStorage.getItem('hb-theme')}catch(e){return null}})();
-    function setTheme(theme){root.setAttribute('data-theme',theme);themeButton.textContent=theme==='dark'?'☀ Light':'☾ Dark';themeButton.setAttribute('aria-label',`Switch to ${theme==='dark'?'light':'dark'} theme`);try{localStorage.setItem('hb-theme',theme)}catch(e){}}
-    setTheme(savedTheme==='light'?'light':'dark');
-    themeButton.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark'));
-    const menuButton=document.getElementById('menuToggle'),navLinks=document.getElementById('navLinks');
-    menuButton.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close navigation':'Open navigation');menuButton.textContent=open?'✕':'☰'});
-    navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigation');menuButton.textContent='☰'}));
+    const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* Theme */
+    const tBtn=document.getElementById('themeToggle'),tIcon=document.getElementById('themeIcon');
+    const MOON='M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z';
+    const SUN='M12 4V2M12 22v-2M4 12H2M22 12h-2M5.6 5.6 4.2 4.2M19.8 19.8l-1.4-1.4M5.6 18.4l-1.4 1.4M19.8 4.2l-1.4 1.4M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z';
+    function paint(t){root.setAttribute('data-theme',t);tIcon.setAttribute('d',t==='dark'?SUN:MOON);tBtn.setAttribute('aria-label','Switch to '+(t==='dark'?'light':'dark')+' theme')}
+    paint(root.getAttribute('data-theme')||'light');
+    tBtn.addEventListener('click',()=>{const t=root.getAttribute('data-theme')==='dark'?'light':'dark';paint(t);try{localStorage.setItem('hb-theme',t)}catch(e){}});
+
+    /* Nav */
+    const nav=document.getElementById('nav');
+    const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>8);
+    onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+    const mBtn=document.getElementById('menuToggle'),links=document.getElementById('navLinks');
+    mBtn.addEventListener('click',()=>{const o=links.classList.toggle('open');mBtn.setAttribute('aria-expanded',String(o));mBtn.setAttribute('aria-label',o?'Close menu':'Open menu')});
+    links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');mBtn.setAttribute('aria-expanded','false');mBtn.setAttribute('aria-label','Open menu')}));
+    // Highlight current section
+    const navAs=[...links.querySelectorAll('a')];
+    if('IntersectionObserver' in window){
+      const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){navAs.forEach(a=>a.setAttribute('aria-current',a.getAttribute('href')==='#'+e.target.id?'true':'false'))}}),{rootMargin:'-45% 0px -50% 0px'});
+      ['experience','projects','skills','education','contact'].forEach(id=>{const el=document.getElementById(id);if(el)io.observe(el)});
+    }
+
+    /* Search console */
+    const Q={
+      career:{
+        q:[['k','index'],['t','='],['s','career'],['t',' name='],['s','"Hamza Babar"'],['p',' | '],['k','table'],['t',' field, value']],
+        meta:'4 events matched',
+        head:['field','value'],
+        rows:[['g','status','Open to roles from summer 2027'],['b','focus','SOC, cyber consulting, tech risk'],['b','location','Toronto / GTA, open to relocate'],['a','school','Western University, BSc CS, 2027']]
+      },
+      experience:{
+        q:[['k','index'],['t','='],['s','experience'],['p',' | '],['k','sort'],['t',' -start '],['p','| '],['k','table'],['t',' org, role, year']],
+        meta:'4 events matched, sorted newest first',
+        head:['org','role','year'],
+        rows:[['a','Deloitte ME','SOC Analyst Intern','2026'],['b','KPMG','Technology shadowing','2025'],['b','iSolution','SOC Analyst Intern','2025'],['b','PwC','Tech & Data Advisory','2025']]
+      },
+      stack:{
+        q:[['k','index'],['t','='],['s','stack'],['p',' | '],['k','stats'],['t',' values(tool) '],['k','by'],['t',' category']],
+        meta:'4 categories returned',
+        head:['category','tools'],
+        rows:[['a','siem','Splunk, Microsoft Sentinel'],['a','vuln / endpoint','Tenable, ManageEngine'],['b','languages','Python, Java, C++, SQL, TS'],['b','cloud','Google Cloud']]
+      }
+    };
+    const qEl=document.getElementById('queryText'),meta=document.getElementById('metaLine'),tbl=document.getElementById('results');
+    const tabs=[...document.querySelectorAll('.qtab')];
+    let runId=0;
+    const cls={k:'q-key',s:'q-str',p:'q-pipe',t:''};
+    function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+    function renderQuery(parts,n){
+      let out='',left=n;
+      for(const [type,text] of parts){if(left<=0)break;const piece=text.slice(0,left);left-=piece.length;out+=cls[type]?'<span class="'+cls[type]+'">'+esc(piece)+'</span>':esc(piece)}
+      return out;
+    }
+    function renderTable(d,animate){
+      const sevCls={a:'amber',g:'green',b:''};
+      let h='<thead><tr>'+d.head.map(x=>'<th scope="col">'+x+'</th>').join('')+'</tr></thead><tbody>';
+      d.rows.forEach((r,i)=>{const [sev,...cells]=r;h+='<tr'+(animate?' class="row-in" style="animation-delay:'+(i*70)+'ms"':'')+'>'+cells.map((c,j)=>'<td>'+(j===0?'<span class="sev '+sevCls[sev]+'"></span>':'')+esc(c)+'</td>').join('')+'</tr>'});
+      tbl.innerHTML=h+'</tbody>';
+    }
+    function run(key){
+      const id=++runId,d=Q[key],total=d.q.reduce((n,p)=>n+p[1].length,0);
+      tabs.forEach(t=>t.setAttribute('aria-selected',String(t.dataset.q===key)));
+      tbl.innerHTML='';meta.textContent='';
+      if(reduce){qEl.innerHTML=renderQuery(d.q,total);meta.textContent=d.meta;renderTable(d,false);return}
+      let n=0;
+      (function step(){
+        if(id!==runId)return;
+        n+=2;qEl.innerHTML=renderQuery(d.q,n)+'<span class="caret" aria-hidden="true"></span>';
+        if(n<total){setTimeout(step,22)}
+        else{qEl.innerHTML=renderQuery(d.q,total);meta.textContent='Searching…';
+          setTimeout(()=>{if(id!==runId)return;meta.textContent=d.meta+' in 0.0'+(3+Math.floor(Math.random()*6))+'s';renderTable(d,true)},380)}
+      })();
+    }
+    tabs.forEach((t,i)=>{
+      t.addEventListener('click',()=>run(t.dataset.q));
+      t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];n.focus();run(n.dataset.q)}});
+    });
+    run('career');
+
+    /* Tab bill split demo */
+    const subtotal=67,tax=.13,tipR=.18;
+    const fmt=v=>'$'+v.toFixed(2);
+    const splitBtns=[...document.querySelectorAll('.ph-split button')];
+    function split(n){
+      splitBtns.forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.split===n)));
+      const extra=subtotal*(tax+tipR);
+      document.getElementById('tipAmt').textContent=fmt(extra/n);
+      document.getElementById('shareAmt').textContent=fmt((subtotal+extra)/n);
+    }
+    splitBtns.forEach(b=>b.addEventListener('click',()=>split(+b.dataset.split)));
+    split(3);
+
+    /* StudyCafe filter demo */
+    const chips=[...document.querySelectorAll('.chip')],pins=[...document.querySelectorAll('.pin')],count=document.getElementById('mapCount');
+    function filter(){
+      const on=chips.filter(c=>c.getAttribute('aria-pressed')==='true').map(c=>c.dataset.f);
+      let m=0;
+      pins.forEach(p=>{const tags=p.dataset.tags.split(' ');const ok=on.every(f=>tags.includes(f));p.classList.toggle('dim',!ok);p.classList.toggle('match',ok&&on.length>0);if(ok)m++});
+      count.textContent=on.length?m+' of 6 spots match':'6 spots nearby';
+    }
+    chips.forEach(c=>c.addEventListener('click',()=>{c.setAttribute('aria-pressed',String(c.getAttribute('aria-pressed')!=='true'));filter()}));
+
+    /* Copy email */
+    const cBtn=document.getElementById('copyEmail');
+    cBtn.addEventListener('click',async()=>{
+      try{await navigator.clipboard.writeText('hkbabar10@gmail.com');cBtn.textContent='Copied';cBtn.dataset.done='true'}
+      catch(e){cBtn.textContent='Copy failed. Select the address instead.'}
+      setTimeout(()=>{cBtn.textContent='Copy email';cBtn.dataset.done='false'},2200);
+    });
+
     document.getElementById('year').textContent=new Date().getFullYear();
+  })();
   </script>
 </body>
 </html>
